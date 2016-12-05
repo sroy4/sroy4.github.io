@@ -6,8 +6,11 @@
 <!-- Form Name -->
 <legend>Hyperthyroidism Form</legend>
 
-<div id="overlay">
-    <div id="overlayText"></div>
+<div class="container" name="overlay2" id="overlay">
+    <div id="overlayText">
+      <div id="spinner">
+    </div>  
+    </div>
 </div>
 <!-- Text input-->
 
@@ -345,6 +348,13 @@
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4">
+    <button onclick="predict()" class="btn btn-warning" >Predict!</button>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4">
     <button onclick="generateRandom()" class="btn btn-warning" >Try random values</button>
   </div>
 </div>
@@ -356,12 +366,7 @@
   </div>
 </div>
 
-<div class="form-group">
-  <label class="col-md-4 control-label"></label>
-  <div class="col-md-4">
-    <button onclick="predict()" class="btn btn-warning" >Predict!</button>
-  </div>
-</div>
+
 
 
 </fieldset>
@@ -381,6 +386,7 @@
 <script src="vendor/js/bootstrapValidator.js"></script>
 <script src="vendor/js/d3.min.js"></script>
 <script src="vendor/js/synaptic.min.js"></script>
+<script src="vendor/js/spin.min.js"></script>
 <!-- <script src="vendor/js/jquery-1.8.3.min.js"></script>
 <script src="vendor/js/jquery-ui.min.js"></script> -->
 

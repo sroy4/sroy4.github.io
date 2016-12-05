@@ -126,7 +126,7 @@ var trained=0;
 var model;
 //var features=["Age", "Sex", "On_thyroxine", "Query_on_thyroxine", "On_antithyroid_medication", "Sick", "Pregnant", "Thyroid Surgery", "I131_treatment", "Query_hypothyroid", "Query_hyperthyroid", "Lithium", "Goiter", "Tumor", "Hypopituitary", "Pysch", "TSH", "T3", "TT4", "T4U", "FTI"];
 var features=["Age", "Sex", "On_thyroxine", "On_antithyroid_medication", "Sick", "Pregnant", "Thyroid Surgery", "I131_treatment", "Lithium", "Goiter", "Tumor", "Hypopituitary", "Pysch", "TSH", "T3", "TT4", "T4U", "FTI"];
-var overlayText = document.getElementById("overlayText");
+document.getElementById("overlayText").innerText="Training.....\n This might take some time.\n"
 
 function getRadioCheckedValue(radio_name)
 {
@@ -177,8 +177,13 @@ Perceptron.prototype = new synaptic.Network();
 Perceptron.prototype.constructor = Perceptron;
 
 function train() {
+
+
+
+
 toggle_visibility("overlay");
-document.getElementById("overlayText").innerText="Training.....\n"
+//var spinner = new Spinner().spin();
+//document.overlay2.appendChild(spinner.el);
 
 trainingSet=[];
 testSet=[];
@@ -224,16 +229,17 @@ var trainer = new Trainer(myPerceptron);
 
 trainer.train(trainingSet,{
     rate: .01,
-    iterations: 1000,
+    iterations: 4000,
     error: .005,
     shuffle: true,
-    log: 1000,
+    //log: 1000,
     cost: Trainer.cost.CROSS_ENTROPY,
     schedule: {
         every: 1000, // repeat this task every 500 iterations
         do: function(data) {
             // custom log
             document.getElementById("overlayText").innerText=document.getElementById("overlayText").innerText+"Error: "+ (data.error).toFixed(4)+ "     "+ "Iterations: "+ data.iterations + "\n" ;
+       
             //console.log("error", data.error, "iterations", data.iterations, "rate", data.rate);
             //if (someCondition)
              //   return true; // abort/stop training
@@ -245,7 +251,8 @@ var delay=10000; //10 second
 
 setTimeout(function() {
   //your code to be executed after 1 second
-  console.log("Wait Over")
+  console.log("Wait Over");
+  //spinner.stop();
   toggle_visibility("overlay");
   console.log(myPerceptron.activate(testSet[0]['input']));
   var j=0;

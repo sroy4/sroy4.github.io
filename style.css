@@ -1,10 +1,10 @@
 #success_message{ display: none;}
 #overlay {
   display: none;	
-  background-color: black;
+  background-color: black; 
   position: fixed;
   top: 50; right: 50; bottom: 50; left: 50;
-  opacity: 0.2; /* also -moz-opacity, etc. */
+  opacity: 0.2; /*  also -moz-opacity, etc. */
   z-index: 10;
 }
 #overlayText {
@@ -14,4 +14,7 @@
     opacity: 1;
     font-size: large;
     text-align: right;
+}
+#spinner {
+opacity:right;
 }
