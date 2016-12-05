@@ -6,6 +6,9 @@
 <!-- Form Name -->
 <legend>Hyperthyroidism Form</legend>
 
+<div id="overlay">
+    <div id="overlayText"></div>
+</div>
 <!-- Text input-->
 
 <div class="form-group">
@@ -113,6 +116,7 @@
           </div>
 </div>
 
+
 <div class="form-group">
       <label class="col-md-4 control-label">Are you sick?</label>
           <div class="col-md-4">
@@ -128,7 +132,6 @@
           </div>
           </div>
 </div>
-
 <div class="form-group">
       <label class="col-md-4 control-label">Are you on anti-thyroid medication?</label>
           <div class="col-md-4">
@@ -177,7 +180,7 @@
           </div>
 </div>
 
-<div class="form-group">
+<!-- <div class="form-group">
       <label class="col-md-4 control-label">Are you on Thyroxine?</label>
           <div class="col-md-4">
               <div class="radio">
@@ -191,7 +194,7 @@
               </label>
           </div>
           </div>
-</div>
+</div> -->
 
 <div class="form-group">
       <label class="col-md-4 control-label">Are you being treated for I131?</label>
@@ -209,7 +212,7 @@
           </div>
 </div>
 
-<div class="form-group">
+<!-- <div class="form-group">
       <label class="col-md-4 control-label">Do you have hyperthyroidism?</label>
           <div class="col-md-4">
               <div class="radio">
@@ -239,7 +242,7 @@
               </label>
           </div>
           </div>
-</div>
+</div> -->
 
 <div class="form-group">
       <label class="col-md-4 control-label">Do you have Goiter?</label>
@@ -319,7 +322,7 @@
               </label>
           </div>
           </div>
-</div>
+</div> 
 
 <!-- Text area -->
   
@@ -342,16 +345,24 @@
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4">
-    <button onclick="generateRandom()" class="btn btn-warning" >Fill random values</button>
+    <button onclick="generateRandom()" class="btn btn-warning" >Try random values</button>
   </div>
 </div>
 
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4">
-    <button onclick="myFunction()" class="btn btn-warning" >Predict!</button>
+    <button onclick="train()" class="btn btn-warning" >Train a new model!</button>
   </div>
 </div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4">
+    <button onclick="predict()" class="btn btn-warning" >Predict!</button>
+  </div>
+</div>
+
 
 </fieldset>
 </form>
